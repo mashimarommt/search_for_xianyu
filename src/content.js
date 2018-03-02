@@ -9,3 +9,7 @@ var div = document.createElement("div");
 div.className = "idle-search";
 div.innerHTML = innerHTML;
 document.getElementById("J_IdleHeader").appendChild(div);
+document.getElementById("J_HeaderSearchQuery").value = sessionStorage.getItem("q");
+document.getElementById("J_HeaderSearchQuery").addEventListener("input", function () {
+    sessionStorage.setItem("q", document.getElementById("J_HeaderSearchQuery").value);
+});
